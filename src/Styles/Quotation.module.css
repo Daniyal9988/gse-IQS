@@ -1,0 +1,495 @@
+/* --- LOADING STATE --- */
+
+.loadingContainer {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 100vh;
+
+  color: #3b82f6;
+
+  font-family: sans-serif;
+
+}
+
+
+
+.spinner {
+
+  width: 50px;
+
+  height: 50px;
+
+  border: 5px solid #f3f4f6;
+
+  border-top: 5px solid #3b82f6;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+@keyframes spin {
+
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+
+}
+
+
+
+/* --- ERROR STATE --- */
+
+.errorContainer {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 100vh;
+
+  background-color: #fef2f2;
+
+}
+
+
+
+.errorBox {
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+
+  max-width: 400px;
+
+  border: 1px solid #fee2e2;
+
+}
+
+
+
+.errorBox h2 {
+
+  color: #dc2626;
+
+  margin-top: 0;
+
+}
+
+
+
+.errorBox p {
+
+  color: #4b5563;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.errorBox button {
+
+  background-color: #3b82f6;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+}
+
+
+
+.errorBox button:hover {
+
+  background-color: #2563eb;
+
+}
+
+
+
+/* Rest of your existing CSS (container, table, etc.) follows below... */
+
+
+
+:global(body) {
+
+  background-color: #e2e8f0;
+
+  background-image:
+
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px),
+
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+
+  background-size: 20px 20px;
+
+  margin: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  min-height: 100vh;
+
+}
+
+
+
+.container {
+
+  width: 795px;
+
+  min-height: 1120px;
+
+  margin: 0 auto;
+
+  padding: 20px;
+
+  background: white;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+}
+
+
+
+.mainContent {
+
+  flex: 1 0 auto;
+
+}
+
+
+
+.imageHeader {
+
+  width: 100%;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.headerImg {
+
+  width: 100%;
+
+  display: block;
+
+}
+
+
+
+.footerGroup {
+
+  width: 100%;
+
+  margin-top: 20px;
+
+}
+
+
+
+.imageFooter {
+
+  width: 100%;
+
+  margin-top: 30px;
+
+}
+
+
+
+.footerImg {
+
+  width: 100%;
+
+  display: block;
+
+}
+
+
+
+.topSection {
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.sectionTitle {
+
+  font-size: 13px;
+
+  color: #3b82f6;
+
+  font-weight: bold;
+
+  text-decoration: underline;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.flexRow {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.leftCol { display: flex; align-items: center; width: 55%; position: relative; }
+
+.rightCol { display: flex; align-items: center; justify-content: flex-end; width: 45%; }
+
+
+
+.searchWrapper { position: relative; width: 100%; }
+
+.customDropdown, .tableDropdown {
+
+  position: absolute;
+
+  top: 100%;
+
+  left: 0;
+
+  width: 100%;
+
+  background: white;
+
+  border: 1px solid #3b82f6;
+
+  max-height: 180px;
+
+  overflow-y: auto;
+
+  z-index: 9999;
+
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+}
+
+.tableDropdown { width: 250px; left: 0; }
+
+
+
+.dropdownItem {
+
+  padding: 10px 12px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  color: #374151;
+
+  border-bottom: 1px solid #f3f4f6;
+
+  text-align: left;
+
+}
+
+.dropdownItem:hover { background-color: #f0f7ff; color: #3b82f6; font-weight: bold; }
+
+
+
+.label, .labelRight { flex-shrink: 0; font-weight: bold; color: #3b82f6; font-size: 11px; }
+
+.label { width: 105px; }
+
+.labelRight { width: 90px; margin-right: 12px; }
+
+
+
+.noLineInput, .noLineInputRight { border: none !important; outline: none; font-size: 11px; background: transparent; padding: 4px 0; width: 100%; }
+
+.noLineInputRight { width: 140px; }
+
+
+
+.table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+
+.table th { background-color: #3b82f6; color: white; border: 1px solid #3b82f6; padding: 8px; font-size: 11px; }
+
+.table td { border: 1px solid #3b82f6; padding: 0; font-size: 11px; }
+
+
+
+.colSn { width: 30px; }
+
+.colCode { width: 90px; }
+
+.colQty { width: 50px; }
+
+.colPrice { width: 85px; }
+
+.colTotal { width: 95px;}
+
+.colAction { width: 25px; border: none !important; }
+
+
+
+.cellInput { width: 100%; border: none; padding: 8px 5px; outline: none; background: transparent; font-size: 11px; }
+
+.textCenter { text-align: center; }
+
+.textRight { text-align: right; padding-right: 8px !important; }
+
+.rightAlignHeader { text-align: right; padding-right: 8px !important; }
+
+.leftAlign { text-align: left; padding-left: 8px !important; }
+
+
+
+.summaryContainer { display: flex; justify-content: flex-end; margin-top: 10px; }
+
+.summaryBox { width: 220px; border: 1.5px solid #3b82f6; }
+
+.summaryLine { display: flex; justify-content: space-between; padding: 5px 8px; border-bottom: 1px solid #3b82f6; font-size: 11px; }
+
+.totalLine { display: flex; justify-content: space-between; padding: 7px 8px; font-weight: bold; background-color: #3b82f6; color: white; font-size: 11px; }
+
+
+
+.termsFooter { font-size: 10px; margin-bottom: 10px; }
+
+.termsFooter h4 { color: #3b82f6; margin-bottom: 5px; }
+
+.bankSection { margin-top: 30px; padding: 6px; border-left: 3px solid #3b82f6; background: #f0f7ff; }
+
+
+
+.addButton { margin-top: 10px; border: 1px solid #3b82f6; color: #3b82f6; background: white; cursor: pointer; font-size: 10px; padding: 5px 10px; }
+
+.deleteBtn { color: #ef4444; background: none; border: none; cursor: pointer; font-size: 16px; width: 100%; }
+
+
+
+.actions { text-align: center; margin: 20px 0; }
+
+.printButton { padding: 10px 40px; background: #3b82f6; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+
+
+
+@media print {
+
+  @page {
+
+    margin: 10mm;
+
+    size: A4;
+
+  }
+
+  body {
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: visible !important;
+
+  }
+
+  .printHidden { display: none !important; }
+
+  .container {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: block;
+
+  }
+
+  .table tr {
+
+    page-break-inside: avoid;
+
+  }
+
+  .footerGroup {
+
+    page-break-inside: avoid;
+
+    display: block;
+
+    margin-top: 40px;
+
+  }
+
+  .table th, .totalLine {
+
+    background-color: #3b82f6 !important;
+
+    -webkit-print-color-adjust: exact;
+
+    print-color-adjust: exact;
+
+  }
+
+}
+
+
+
+

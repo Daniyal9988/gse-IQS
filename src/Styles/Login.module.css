@@ -1,0 +1,133 @@
+/* ... Keep your existing container, errorMessage, and animations ... */
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a; 
+  background-image: url('../assets/login-bg.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 9999;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.loginCard {
+  width: 90%;
+  max-width: 380px;
+  min-width: 280px; /* Adjusted to fit within 300px screens */
+  background: #ffffff;
+  padding: 50px 35px;
+  border-radius: 16px; 
+  overflow: hidden; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-top: 8px solid #3b82f6;
+  transition: transform 0.2s ease;
+}
+
+/* ... Keep existing errorMessage, inputError, shake, and fadeIn ... */
+
+.errorMessage {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+.inputError {
+  border-color: #ef4444 !important;
+  background-color: #fffafb !important;
+}
+
+.shake {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header { text-align: center; margin-bottom: 40px; }
+.logo { width: 130px; margin-bottom: 20px; }
+.header h1 { font-size: 14px; font-weight: 900; color: #1e293b; letter-spacing: 2px; margin: 0; text-transform: uppercase; }
+.header p { font-size: 10px; color: #64748b; margin-top: 5px; letter-spacing: 1px; }
+
+.form { display: flex; flex-direction: column; gap: 15px; }
+.field input {
+  width: 100%;
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #1e293b;
+  transition: all 0.2s ease;
+}
+
+.field input:focus { outline: none; background: #fff; border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f6; }
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+.submitBtn:hover { background: #3b82f6; }
+
+.footer { margin-top: 40px; text-align: center; border-top: 1px solid #f1f5f9; padding-top: 20px; }
+.footer span { font-size: 9px; color: #94a3b8; font-weight: 700; letter-spacing: 1px; }
+
+/* --- RESPONSIVENESS (Down to 300px) --- */
+
+@media (max-width: 400px) { 
+  .loginCard { 
+    padding: 35px 20px; /* Reduced padding for more space */
+    width: 92%; 
+  }
+  .logo { 
+    width: 110px; /* Smaller logo for mobile */
+  }
+}
+
+@media (max-width: 320px) {
+  .loginCard {
+    padding: 30px 15px;
+  }
+  .header h1 {
+    font-size: 12px; /* Shrink text slightly so it doesn't wrap poorly */
+  }
+  .field input {
+    padding: 12px; /* Slightly smaller inputs */
+  }
+}
