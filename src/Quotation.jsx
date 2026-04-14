@@ -294,12 +294,16 @@ const Quotation = () => {
       <div className={styles.footerGroup}>
         <div className={styles.termsFooter}>
           <h4>Terms and Conditions</h4>
-          <p>1. Prices are in Saudi Riyals (SAR).</p>
-          <p>2. 50% Advance payment required. Balance prior to delivery.</p>
-          <p>3. Valid for 7 days.</p>
+          <p>1. All prices mentioned in this quotation are in Saudi Riyals (SAR)</p>
+          <p>2. To confirm the order, a minimum advance payment of 50% is required.</p>
+          <p>3. The remaining balance must be settled prior to delivery of goods.</p>
+          <p>4. This quotation is valid for 7 days from the date of issue.</p>
+          <p>5. Delivery timeline will be confirmed upon receipt of advance payment.</p>
           <div className={styles.bankSection}>
             <strong>Bank Details:</strong>
             <p>Riyad Bank</p>
+            <p>{import.meta.env.VITE_ACCOUNT_NUMBER}</p>
+            <p>{import.meta.env.VITE_IBAN_NUMBER}</p>
           </div>
         </div>
         <div className={styles.imageFooter}>

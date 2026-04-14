@@ -190,6 +190,9 @@
 
   position: relative;
 
+  overflow-x: auto;
+
+  overflow-y: auto;
 }
 
 
