@@ -14,10 +14,25 @@ const Quotation = () => {
   const [contactPerson, setContactPerson] = useState("");
   const [contactNo, setContactNo] = useState("");
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // New Error State
+  const [error, setError] = useState(null); 
+  const [quotationNo, setQuotationNo] = useState("");
   
   const [showCompanyDropdown, setShowCompanyDropdown] = useState(false);
   const companyRef = useRef(null);
+
+  useEffect(() => {
+
+if (quotationNo.trim() !== "") {
+
+document.title = quotationNo;
+
+} else {
+
+document.title = "GSE Quotation";
+
+}
+
+}, [quotationNo]);
 
   useEffect(() => {
     Papa.parse(SHEET_URL, {
@@ -193,7 +208,7 @@ const Quotation = () => {
             </div>
             <div className={styles.rightCol}>
               <span className={styles.labelRight}>Quotation #:</span>
-              <input  className={styles.noLineInputRight} placeholder="QT-XXXXXX" />
+              <input  className={styles.noLineInputRight} placeholder="QT-XXXXXX"  onChange={(e) => setQuotationNo(e.target.value)}/>
             </div>
           </div>
 
