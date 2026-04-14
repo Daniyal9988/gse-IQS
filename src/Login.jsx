@@ -90,7 +90,7 @@ const handleAccess = (e) => {
         </form>
 
         <div className={styles.footer}>
-          <span>ESTABLISHED 2011 • RIYADH, KSA</span>
+          <span>• RIYADH, KSA</span>
         </div>
       </div>
     </div>
